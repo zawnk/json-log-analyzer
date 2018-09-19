@@ -1,15 +1,21 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <page-header />
+    <router-view />
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'json-log-analyzer'
+import PageHeader from '@/components/globals/Header.vue'
+
+export default {
+  name: 'json-log-analyzer',
+  components: {
+    PageHeader
   }
+}
 </script>
 
 <style>
-  /* CSS */
+  html { overflow-y: auto }
 </style>
