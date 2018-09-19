@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "",
   "description": "Tiny tool to analyze logs in json format with filter functionality",
-  "license": null,
+  "license": "GPL-3.0",
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
