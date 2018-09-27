@@ -11,6 +11,9 @@ const mutations = {
   },
   ADD_TO_FILE_LIST (state, entry) {
     state.fileList.push(entry)
+  },
+  CLEAR_FILES (state) {
+    state.fileList = []
   }
 }
 
@@ -27,6 +30,9 @@ const actions = {
         commit('ADD_TO_FILE_LIST', entry)
       }
     }
+  },
+  clearFiles ({ commit }) {
+    commit('CLEAR_FILES')
   }
 }
 

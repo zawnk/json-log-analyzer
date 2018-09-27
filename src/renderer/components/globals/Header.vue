@@ -1,15 +1,18 @@
 <template>
   <v-toolbar fixed dark class="primary">
     <v-toolbar-title class="mr-5" style="user-select: none">
-        JLA
+        JLA v0.1
     </v-toolbar-title>
     <v-toolbar-items>
       <v-btn v-if="this.$store.state.files.fileList.length <= 0" flat @click.stop="setFileList">
         Open Json logs...
       </v-btn>
-      <v-btn v-else flat @click.stop="addFiles">
+      <v-btn v-if="this.$store.state.files.fileList.length > 0 && this.$route.name === 'landing-page'" flat @click.stop="addFiles">
         Add more files
         <v-icon class="pl-1">playlist_add</v-icon>
+      </v-btn>
+      <v-btn v-if="this.$route.name === 'analysis-index'" flat @click.stop="reset">
+        Reset
       </v-btn>
     </v-toolbar-items>
     <v-spacer></v-spacer>
@@ -53,6 +56,10 @@ export default {
       if (filePaths) {
         this.$store.dispatch('addNewPathsToFileList', filePaths)
       }
+    },
+    reset () {
+      this.$store.dispatch('clearFiles')
+      this.$router.push({ name: 'landing-page' })
     },
     shutDownApp () {
       remote.getCurrentWindow().close()
