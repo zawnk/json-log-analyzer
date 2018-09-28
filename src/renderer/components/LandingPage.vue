@@ -19,7 +19,7 @@
       </v-list>
     </v-layout>
     <v-layout shrink row fill-height align-baseline v-if="this.$store.state.files.fileList.length > 0">
-      <v-btn class="secondary" @click.stop="startLoadingFiles">
+      <v-btn class="secondary" @click.native="startLoadingFiles()">
         Start analyzing
       </v-btn>
       <v-flex align-end>{{this.$store.state.files.fileList.length}} file{{ this.$store.state.files.fileList.length>1 ? 's' : '' }}</v-flex>
