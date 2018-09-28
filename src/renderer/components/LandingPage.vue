@@ -31,10 +31,10 @@
   export default {
     methods: {
       removeFileFromList (index) {
-        this.$store.dispatch('removeFileWithIndex', index)
+        this.$store.dispatch('files/removeFileWithIndex', index)
       },
       startLoadingFiles () {
-        this.$store.dispatch('setLoading', true)
+        // this.$store.dispatch('global/setLoading', true)
         this.$router.push({ name: 'analysis-index' })
       }
     },

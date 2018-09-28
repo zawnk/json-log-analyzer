@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar fixed dark class="primary">
+  <v-toolbar fixed app dark class="primary">
     <v-toolbar-title class="mr-5" style="user-select: none">
         JLA v0.1
     </v-toolbar-title>
@@ -42,7 +42,7 @@ export default {
         ]
       })
       if (filePaths) {
-        this.$store.dispatch('setFileList', filePaths)
+        this.$store.dispatch('files/setFileList', filePaths)
       }
     },
     addFiles () {
@@ -54,11 +54,11 @@ export default {
         ]
       })
       if (filePaths) {
-        this.$store.dispatch('addNewPathsToFileList', filePaths)
+        this.$store.dispatch('files/addNewPathsToFileList', filePaths)
       }
     },
     reset () {
-      this.$store.dispatch('clearFiles')
+      this.$store.dispatch('files/clearFiles')
       this.$router.push({ name: 'landing-page' })
     },
     shutDownApp () {
